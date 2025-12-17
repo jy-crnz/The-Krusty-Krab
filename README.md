@@ -44,8 +44,8 @@ To modernize The Krusty Krab's operations by providing an online menu, showcasin
 - Solved file path issues using a custom JavaScript Footer Loader.
 
 ## Timeline
-Phase|Task|Date|
-Phase 1| Proposal,"Planning, sitemap, & wireframing"|"Oct 14 – Oct 20, 2025"
-Phase 2| Development,Coding HTML/CSS/JS & responsive testing,|"Oct 21 – Dec 05, 2025"
-Phase 3| Deployment,GitHub repository setup & Pages launch,|"Dec 06 – Dec 10, 2025"
-Phase 4| Submission,Final documentation & project turnover,|"Dec 11 – Dec 12, 2025"
+Phase,Task,Date
+Phase 1: Proposal,"Planning, sitemap, & wireframing","Oct 14 – Oct 20, 2025"
+Phase 2: Development,Coding HTML/CSS/JS & responsive testing,"Oct 21 – Dec 05, 2025"
+Phase 3: Deployment,GitHub repository setup & Pages launch,"Dec 06 – Dec 10, 2025"
+Phase 4: Submission,Final documentation & project turnover,"Dec 11 – Dec 12, 2025"
