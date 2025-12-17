@@ -7,9 +7,9 @@ This website was developed by BSIS/BSIT 3rd year students as part of the Web Dev
 To modernize The Krusty Krab's operations by providing an online menu, showcasing the restaurant's history, and streamlining customer inquiries through a digital contact form.
 
 ## Team Members & Roles
-- **Zeint Justine B. Lacra** - [Role, e.g., Frontend Developer & Designer]
-- **Jay Lawrence C. Cerniaz** - [Role, e.g., Backend Developer & Database Manager]
-- **Mel Frederick R. Sablan** - [Role, e.g., Project Manager & Content Strategist]
+- **Zeint Justine B. Lacra** - [Frontend Developer & Designer]
+- **Jay Lawrence C. Cerniaz** - [Backend Developer & Database Manager]
+- **Mel Frederick R. Sablan** - [Project Manager & Content Strategist]
 
 ## Tools Used
 - **Frontend:** HTML5, CSS3, JavaScript (GSAP, OwlCarousel, SwiperJS)
@@ -44,8 +44,9 @@ To modernize The Krusty Krab's operations by providing an online menu, showcasin
 - Solved file path issues using a custom JavaScript Footer Loader.
 
 ## Timeline
-Phase,Task,Date
-Phase 1: Proposal,"Planning, sitemap, & wireframing","Oct 14 – Oct 20, 2025"
-Phase 2: Development,Coding HTML/CSS/JS & responsive testing,"Oct 21 – Dec 05, 2025"
-Phase 3: Deployment,GitHub repository setup & Pages launch,"Dec 06 – Dec 10, 2025"
-Phase 4: Submission,Final documentation & project turnover,"Dec 11 – Dec 12, 2025"
+| Phase | Task | Date |
+| :--- | :--- | :--- |
+| **Proposal** | Planning & wireframe | Oct 14 – Oct 20, 2025 |
+| **Development** | Coding & testing | Oct 21 – Dec 05, 2025 |
+| **Deployment** | GitHub setup & launch | Dec 06 – Dec 10, 2025 |
+| **Submission** | Final documentation | Dec 11 – Dec 12, 2025 |
