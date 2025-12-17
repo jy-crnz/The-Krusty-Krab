@@ -232,28 +232,7 @@ body {
 .hero-patty {
     flex: 0 0 auto;
     display: flex;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-    /* Reduced this margin so it doesn't pull too far left now that the arm is closer */
-    margin-left: -30px; 
-}
-
-.spongebob-arm {
-    position: absolute;
-    /* 1. Size: Slightly reduced to match proportions better */
-    width: 450px;      
-    
-    /* 2. Position: Brought closer to the burger (-180px was too far) */
-    left: -120px;      
-    
-    /* 3. Height: Moved up slightly so the hand grabs the middle of the bun */
-    top: 90px;        
-    
-    z-index: 2;
-    transform: rotate(-10deg);
-    animation: float 4s ease-in-out infinite;
-    pointer-events: none;
+    justify-content: flex-start;
 }
 
 .hero-text {
@@ -289,13 +268,16 @@ body {
 }
 
 .krabby-patty {
-    width: 800px;      
-    height: auto;
+    width: 800px;
+    height: 700px;
     animation: float 8s ease-in-out infinite;
     display: block;
-    margin: 0 auto;
-    transform: rotate(0deg);
+    margin-top: -50px;
+    margin-left: -330px;
+    transform: rotate(150deg);
+    transform-origin: bottom left;
 }
+
 /* Sea Stars */
 .sea-stars {
     position: absolute;
@@ -845,7 +827,7 @@ body {
         
         /* 2. Move it to the left */
         /* This negative margin pulls it left from the center */
-        margin-left: -400px; 
+        margin-left: -450px; 
     }
 
     /* 3. Resize and reposition the arm to match */
