@@ -1,0 +1,123 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Krusty Krab</title>
+    <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+ <!-- Navigation -->
+    <nav class="navbar">
+        <img src="images/ray.png" alt="Ray" class="ray-image">
+        
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+
+            <div class="logo-center">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png" alt="Krusty Krab Logo" class="logo-img">
+                <span class="logo-text">Krusty Krab</span>
+            </div>
+
+            <ul class="nav-right">
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="hamburger-menu">
+                <button class="hamburger-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Ocean Hero Section -->
+    <section class="ocean-hero">
+
+        <div class="bubbles-container"></div>
+    
+        <div class="ocean-floor"></div>
+
+        <div class="hero-content">
+            <div class="hero-layout">
+                <div class="hero-patty">
+                    <img src="images/krabby patty.png" alt="Krabby Patty" class="krabby-patty">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-title">Home of the world famous</h1>
+                    <h2 class="hero-subtitle">Krabby Patty</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="sea-stars">
+            <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 8%; --random-top: 15%; --random-delay: 0s;">
+            <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 75%; --random-top: 25%; --random-delay: 0.3s;">
+            <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 12%; --random-top: 65%; --random-delay: 0.6s;">
+            <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 85%; --random-top: 55%; --random-delay: 0.9s;">
+            <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 25%; --random-top: 40%; --random-delay: 1.2s;">
+            <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 70%; --random-top: 70%; --random-delay: 1.5s;">
+        </div>
+
+        <div class="decoration seaweed" style="left: 5%; animation-delay: 0s;"></div>
+        <div class="decoration seaweed" style="left: 15%; animation-delay: 0.5s; height: 100px;"></div>
+        <div class="decoration seaweed" style="right: 5%; animation-delay: 1s;"></div>
+        <div class="decoration seaweed" style="right: 15%; animation-delay: 1.5s; height: 140px;"></div>
+    </section>
+
+    <script>
+        // Hamburger Menu 
+        const hamburgerToggle = document.querySelector('.hamburger-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburgerToggle.addEventListener('click', () => {
+            hamburgerToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const bubblesContainer = document.querySelector('.bubbles-container');
+        for (let i = 0; i < 8; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.width = (Math.random() * 30 + 20) + 'px';
+            bubble.style.height = bubble.style.width;
+            bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            bubble.style.animationDelay = Math.random() * 2 + 's';
+            bubblesContainer.appendChild(bubble);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        footer {
+            position: relative;
+            margin-top: 0;
+            background: linear-gradient(to bottom, 
+                rgba(0, 192, 250, 0) 0%,
+                rgba(0, 150, 200, 0.4) 15%,
+                rgba(0, 119, 182, 0.6) 30%,
+                rgba(0, 90, 140, 0.8) 50%,
+                rgba(0, 60, 100, 0.9) 70%,
+                rgba(0, 40, 70, 0.95) 85%,
+                #001a28 100%
+            );
+            padding: 150px 20px 20px;
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        footer::before {
+            display: none;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFD700;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .ocean-floor {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(to top, 
+                #022733 0%,
+                rgba(0, 65, 108, 0.7) 40%,
+                transparent 100%
+            );
+            z-index: 0;
+        }
+        .seaweed {
+            position: absolute;
+            bottom: 0;
+            width: 40px;
+            background: linear-gradient(to top, #1a5c1a, #2d8b2d);
+            border-radius: 20px 20px 0 0;
+            opacity: 0.6;
+            animation: sway 3s ease-in-out infinite;
+        }
+
+        .seaweed:nth-child(1) {
+            left: 5%;
+            height: 80px;
+            animation-delay: 0s;
+        }
+
+        .seaweed:nth-child(2) {
+            left: 15%;
+            height: 100px;
+            animation-delay: 0.5s;
+        }
+
+        .seaweed:nth-child(3) {
+            left: 30%;
+            height: 70px;
+            animation-delay: 1s;
+        }
+
+        .seaweed:nth-child(4) {
+            right: 30%;
+            height: 90px;
+            animation-delay: 1.5s;
+        }
+
+        .seaweed:nth-child(5) {
+            right: 15%;
+            height: 110px;
+            animation-delay: 2s;
+        }
+
+        .seaweed:nth-child(6) {
+            right: 5%;
+            height: 85px;
+            animation-delay: 2.5s;
+        }
+
+        @keyframes sway {
+            0%, 100% {
+                transform: rotate(-3deg);
+            }
+            50% {
+                transform: rotate(3deg);
+            }
+        }
+
+        .coral {
+            position: absolute;
+            bottom: 10px;
+            opacity: 0.5;
+        }
+
+        .coral:nth-child(7) {
+            left: 10%;
+            width: 30px;
+            height: 40px;
+            background: #FF6F61;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .coral:nth-child(8) {
+            right: 10%;
+            width: 25px;
+            height: 35px;
+            background: #FFD700;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .coral:nth-child(9) {
+            left: 25%;
+            width: 35px;
+            height: 45px;
+            background: #9C27B0;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .coral:nth-child(10) {
+            right: 25%;
+            width: 28px;
+            height: 38px;
+            background: #FF8F81;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .house {
+            position: absolute;
+            opacity: 0.9;
+            bottom: -40px;
+            transition: transform 0.3s ease;
+            z-index: 2;
+        }
+
+        .house:hover {
+            transform: scale(1.05);
+        }
+
+        .house img {
+            height: 250px;
+            width: auto;
+            display: block;
+        }
+
+        .spongebob-house {
+            left: 17%;
+        }
+
+        .squidward-house {
+            right: 14%;
+        }
+
+        .footer-bubble {
+            position: fixed;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+            border-radius: 50%;
+            opacity: 0;
+            animation: bubbleRise linear infinite;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .footer-bubble::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 40%;
+            height: 40%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+            border-radius: 50%;
+        }
+
+        @keyframes bubbleRise {
+            0% {
+                transform: translateY(0) translateX(0) scale(0.8);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.7;
+            }
+            50% {
+                opacity: 0.6;
+                transform: translateY(-50vh) translateX(var(--drift-x, 20px)) scale(1);
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(var(--drift-x-end, -20px)) scale(1.1);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Bubbles -->
+    <div 
+        id="footer-bubbles" 
+        style="position: fixed; 
+        bottom: 0; left: 0; 
+        width: 100%; height: 100vh; 
+        pointer-events: none; 
+        z-index: 6;">
+    </div>
+
+    <footer>
+        <div class="ocean-floor">
+            <div class="seaweed"></div>
+            <div class="seaweed"></div>
+            <div class="seaweed"></div>
+            <div class="seaweed"></div>
+            <div class="seaweed"></div>
+            <div class="seaweed"></div>
+            <div class="coral"></div>
+            <div class="coral"></div>
+            <div class="coral"></div>
+            <div class="coral"></div>
+            <div class="house spongebob-house">
+                <img src="images/spongebob_house.png" alt="SpongeBob's Pineapple House">
+            </div>
+            <div class="house squidward-house">
+                <img src="images/squidward_house.png" alt="Squidward's House">
+            </div>
+        </div>
+        
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png" alt="Krusty Krab Logo">
+            </div>
+            <p class="footer-text">
+                <strong>The Krusty Krab</strong><br>
+                Home of the World Famous Krabby Patty
+            </p>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p class="footer-text">
+                9091 Gagalangin Tondo Manila - Bikini Bottom, Pacific Ocean
+            </p>
+            <div class="copyright">
+                &copy; 2025 The Krusty Krab. All rights reserved | Spongebob Squarepants
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Bubble Animation Script
+        (function() {
+            const footerBubblesContainer = document.getElementById('footer-bubbles');
+            
+            if (!footerBubblesContainer) {
+                console.error('Footer bubbles container not found!');
+                return;
+            }
+            
+        for (let i = 0; i < 25; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('footer-bubble');
+            
+            const left = Math.random() * 100;
+            const size = Math.random() * 30 + 20;
+            
+            const speedCategory = Math.random();
+            let duration;
+            if (speedCategory < 0.3) {
+                duration = Math.random() * 4 + 8; 
+            } else if (speedCategory < 0.7) {
+                duration = Math.random() * 6 + 12; 
+            } else {
+                duration = Math.random() * 5 + 20; 
+            }
+            
+            const delay = (Math.random() * 15) - 8; 
+            const driftX = (Math.random() - 0.5) * 80;
+            const driftXEnd = (Math.random() - 0.5) * 80;
+            
+            bubble.style.left = left + '%';
+            bubble.style.width = size + 'px';
+            bubble.style.height = size + 'px';
+            bubble.style.animationDuration = duration + 's';
+            bubble.style.animationDelay = delay + 's';
+            bubble.style.setProperty('--drift-x', driftX + 'px');
+            bubble.style.setProperty('--drift-x-end', driftXEnd + 'px');
+            
+            footerBubblesContainer.appendChild(bubble);
+        }
+            
+            console.log('Bubbles created:', footerBubblesContainer.children.length);
+        })();
+    </script>
+</body>
+</html>
