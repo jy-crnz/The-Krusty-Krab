@@ -1,7 +1,7 @@
 # The Krusty Krab Official Website
 
 ## Project Overview
-This website was developed by BSIS/BSIT 3rd year students as part of the Web Development course. It serves as a digital storefront for The Krusty Krab, allowing customers in Bikini Bottom to view the menu, check promotions, and "build their own burger."
+This website was developed by BSIT 3rd year students as part of the Web Development course. It serves as a digital storefront for The Krusty Krab, allowing customers in Bikini Bottom to view the menu, check promotions, and "build their own burger."
 
 ## Purpose
 To modernize The Krusty Krab's operations by providing an online menu, showcasing the restaurant's history, and streamlining customer inquiries through a digital contact form.
@@ -36,7 +36,7 @@ To modernize The Krusty Krab's operations by providing an online menu, showcasin
 
 ## Deployment
 - **GitHub Repository:** https://github.com/jy-crnz/The-Krusty-Krab
-- **Live Site:** [Insert Your GitHub Pages Link Here]
+- **Live Site:** https://jy-crnz.github.io/The-Krusty-Krab/index.html
 
 ## Lessons Learned
 - Mastered CSS animations (Keyframes) for underwater effects.
