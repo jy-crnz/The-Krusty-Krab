@@ -1,0 +1,768 @@
+<!-- promotions.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promotions - The Krusty Krab</title>
+    <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        @font-face {
+            font-family: 'KrabbyPatty';
+            src: url('/fonts/KrabbyPatty.ttf') format('truetype');
+        }
+
+        .promotions-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        .promotions-title {
+            font-family: 'KrabbyPatty', cursive;
+            font-size: 5rem;
+            color: #FF3333;
+            text-shadow: 
+                -1px -1px 0 #ffffff,
+                0px -1px 0 #FFF,
+                3px 4px 0 #FFF,
+                4px 4px 0 #FFF,
+                0 6px 10px rgba(0, 0, 0, 0.5);
+            letter-spacing: 9px;
+            margin: 0;
+        }
+
+        .blog-slider {
+            width: 100%;
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            box-shadow: 0px 14px 80px rgba(0, 119, 182, 0.3);
+            padding: 25px;
+            border-radius: 25px;
+            height: 450px;
+            transition: all .3s;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        @media screen and (max-width: 992px) {
+            .blog-slider {
+                max-width: 680px;
+                height: 400px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-slider {
+                min-height: 600px;
+                height: auto;
+                margin: 40px auto;
+                padding: 20px;
+            }
+            
+            .promotions-title {
+                font-size: 3.5rem;
+                letter-spacing: 5px;
+            }
+        }
+
+        @media screen and (max-height: 500px) and (min-width: 992px) {
+            .blog-slider {
+                height: 350px;
+            }
+        }
+
+        .blog-slider__item {
+            display: flex;
+            align-items: center;
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-slider__item {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        .blog-slider__item.swiper-slide-active .blog-slider__img img {
+            opacity: 1;
+            transition-delay: .3s;
+        }
+
+        .blog-slider__item.swiper-slide-active .blog-slider__content > * {
+            opacity: 1;
+            transform: none;
+        }
+
+        .blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(1) {
+            transition-delay: 0.3s;
+        }
+
+        .blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(2) {
+            transition-delay: 0.4s;
+        }
+
+        .blog-slider__item.swiper-slide-active .blog-slider__content > *:nth-child(3) {
+            transition-delay: 0.5s;
+        }
+
+        .blog-slider__img {
+            width: 550px;
+            flex-shrink: 0;
+            height: 450px;
+            background: linear-gradient(147deg, rgba(0, 119, 182, 0.8) 0%, rgba(0, 192, 250, 0.6) 74%);
+            box-shadow: 4px 13px 30px 1px rgba(0, 119, 182, 0.3);
+            border-radius: 20px;
+            transform: translateX(-80px);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .blog-slider__img:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(147deg, rgba(0, 119, 182, 0.3) 0%, rgba(0, 192, 250, 0.2) 74%);
+            border-radius: 20px;
+            opacity: 0.6;
+        }
+
+        .blog-slider__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0;
+            border-radius: 20px;
+            transition: all .3s;
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-slider__img {
+                transform: translateX(0);
+                width: 100%;
+                height: 250px;
+                order: 1;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .blog-slider__img {
+                width: 100%;
+                height: 220px;
+            }
+        }
+
+        @media screen and (max-height: 500px) and (min-width: 992px) {
+            .blog-slider__img {
+                height: 270px;
+            }
+        }
+
+        .blog-slider__content {
+            padding-right: 25px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-slider__content {
+                margin-top: 0;
+                text-align: center;
+                padding: 0 20px;
+                order: 2;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .blog-slider__content {
+                padding: 0 15px;
+            }
+        }
+
+        .blog-slider__content > * {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all .4s;
+        }
+
+        .blog-slider__code {
+            color: #FFD700;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 600;
+            font-size: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .blog-slider__title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            line-height: 1.3;
+        }
+
+        .blog-slider__text {
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            line-height: 1.6em;
+            font-size: 1.05rem;
+        }
+
+        .swiper-container-horizontal > .swiper-pagination-bullets,
+        .swiper-pagination-custom,
+        .swiper-pagination-fraction {
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+        }
+
+        .blog-slider__pagination {
+            position: absolute;
+            z-index: 21;
+            right: 20px;
+            width: 11px !important;
+            text-align: center;
+            left: auto !important;
+            top: 50%;
+            bottom: auto !important;
+            transform: translateY(-50%);
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-slider__pagination {
+                transform: translateX(-50%);
+                left: 50% !important;
+                top: auto;
+                bottom: 15px !important;
+                width: 100% !important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        .blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+            margin: 8px 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+                margin: 0 5px;
+            }
+        }
+
+        .swiper-pagination-bullet {
+            width: 11px;
+            height: 11px;
+            display: block;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0.5;
+            transition: all .3s;
+        }
+
+        .swiper-pagination-bullet-active {
+            opacity: 1;
+            background: #0077B6;
+            height: 30px;
+            box-shadow: 0px 0px 20px rgba(0, 119, 182, 0.5);
+        }
+
+        @media screen and (max-width: 768px) {
+            .swiper-pagination-bullet-active {
+                height: 11px;
+                width: 30px;
+            }
+        }
+
+        /* Daily Specials Section */
+        .daily-specials-section {
+            margin: 80px 0;
+            padding: 50px 40px;
+            background: rgba(255, 111, 97, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-family: 'KrabbyPatty', cursive;
+            font-size: 3rem;
+            color: #FF3333;
+            text-align: center;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .specials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .special-card {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .special-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(255, 111, 97, 0.3);
+        }
+
+        .special-day {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FFD700;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .special-item {
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .special-price {
+            font-size: 2rem;
+            color: #FF6F61;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Loyalty Program Section */
+        .loyalty-section {
+            margin: 80px 0;
+            padding: 50px 40px;
+            background: rgba(0, 119, 182, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .loyalty-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .loyalty-title {
+            font-family: 'KrabbyPatty', cursive;
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .loyalty-description {
+            color: white;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .loyalty-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 25px 20px;
+            border-radius: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-text {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Happy Hour Section */
+        .happy-hour-section {
+            margin: 80px 0;
+            padding: 50px 40px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 111, 97, 0.2));
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .happy-hour-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .happy-hour-text {
+            color: white;
+        }
+
+        .happy-hour-text h2 {
+            font-family: 'KrabbyPatty', cursive;
+            font-size: 3rem;
+            color: #FF3333;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .happy-hour-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .happy-hour-time {
+            background: rgba(255, 111, 97, 0.3);
+            padding: 20px;
+            border-radius: 12px;
+            margin-top: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .happy-hour-deals {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .deal-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .deal-item:last-child {
+            border-bottom: none;
+        }
+
+        .deal-name {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .deal-discount {
+            color: #FFD700;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media screen and (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .loyalty-title {
+                font-size: 2.2rem;
+            }
+
+            .happy-hour-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .happy-hour-text h2 {
+                font-size: 2.2rem;
+            }
+
+            .specials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .loyalty-benefits {
+                grid-template-columns: 1fr;
+            }
+
+            .daily-specials-section,
+            .loyalty-section,
+            .happy-hour-section {
+                padding: 35px 25px;
+                margin: 50px 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .loyalty-title {
+                font-size: 1.8rem;
+            }
+
+            .happy-hour-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .blog-slider__title {
+                font-size: 22px;
+            }
+
+            .blog-slider__text {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ocean-background">
+        <img src="images/ray.png" alt="Ray" class="ray-image">
+        <div class="bubbles-container"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+
+            <div class="logo-center">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png" alt="Krusty Krab Logo" class="logo-img">
+                <span class="logo-text">Krusty Krab</span>
+            </div>
+
+            <ul class="nav-right">
+                <li><a href="promotions.html" class="active">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="hamburger-menu">
+                <button class="hamburger-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="menu-section">
+        <div class="container">
+
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    <!-- 20th Anniversary Slide -->
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="https://i.redd.it/ay9j0p3ajlv21.png" alt="20th Anniversary">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">🎉 ANNIVERSARY CELEBRATION</span>
+                            <div class="blog-slider__title">Celebrating 20 Years of Deliciousness!</div>
+                            <div class="blog-slider__text">Two decades of serving the world's most famous burger! Join us as we celebrate 20 years of flipping patties, spreading joy, and making Bikini Bottom a tastier place. Thank you for being part of our incredible journey!</div>
+                        </div>
+                    </div>
+
+                    <!-- Wendy's Collab Slide -->
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="https://www.cheapism.com/wp-content/uploads/2025/07/krabby-patty-wendys-thumb.original.jpg" alt="Wendy's Collaboration">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">🍔 EXCLUSIVE COLLAB</span>
+                            <div class="blog-slider__title">Krabby Patty Meets the Surface World!</div>
+                            <div class="blog-slider__text">The legendary Krabby Patty makes waves above sea level! Experience our iconic flavor in a special collaboration that brings Bikini Bottom's best to land dwellers everywhere. A historic moment in burger history!</div>
+                        </div>
+                    </div>
+
+                    <!-- LEGO Set Slide -->
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="https://ueeshop.ly200-cdn.com/u_file/UPAW/UPAW131/2409/02/products/0b6e349980.webp?x-oss-process=image/format,webp/quality,q_100/resize,m_lfit,h_1000,w_1000" alt="LEGO Krusty Krab">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">🧱 NOW AVAILABLE</span>
+                            <div class="blog-slider__title">Build Your Own Krusty Krab!</div>
+                            <div class="blog-slider__text">Bring home the magic brick by brick! The official LEGO Krusty Krab set lets you recreate our beloved restaurant in stunning detail. Complete with mini-figures and all the charm of the original. Perfect for collectors and fans!</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-slider__pagination"></div>
+            </div>
+
+            <!-- Daily Specials Section -->
+            <div class="daily-specials-section">
+                <h2 class="section-title">Daily Specials</h2>
+                <div class="specials-grid">
+                    <div class="special-card">
+                        <div class="special-day">Monday Madness</div>
+                        <div class="special-item">Krabby Patty Combo</div>
+                        <div class="special-price">$3.99</div>
+                    </div>
+                    <div class="special-card">
+                        <div class="special-day">Wow Wednesday</div>
+                        <div class="special-item">Coral Bits Basket</div>
+                        <div class="special-price">$4.99</div>
+                    </div>
+                    <div class="special-card">
+                        <div class="special-day">Fantastic Friday</div>
+                        <div class="special-item">Triple Krabby Supreme</div>
+                        <div class="special-price">$6.99</div>
+                    </div>
+                    <div class="special-card">
+                        <div class="special-day">Weekend Special</div>
+                        <div class="special-item">Family Meal Deal</div>
+                        <div class="special-price">$19.99</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loyalty Program Section -->
+            <div class="loyalty-section">
+                <div class="loyalty-content">
+                    <h2 class="loyalty-title">Krusty Kard Rewards</h2>
+                    <p class="loyalty-description">Sign up for our exclusive loyalty card and earn treasure with every purchase! <br>Visit your local Krusty Krab for more details.</p>
+                    <div class="loyalty-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🍔</div>
+                            <div class="benefit-text">Free Krabby Patty on Birthday</div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">⭐</div>
+                            <div class="benefit-text">Earn 1 Point per Dollar</div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">🎁</div>
+                            <div class="benefit-text">Exclusive Member Deals</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Happy Hour Section -->
+            <div class="happy-hour-section">
+                <div class="happy-hour-content">
+                    <div class="happy-hour-text">
+                        <h2>Happy Hour!</h2>
+                        <p>Every weekends from 2 PM to 5 PM, dive into our fantastic Happy Hour deals. Because at the Krusty Krab, happiness is always on the menu!</p>
+                        <div class="happy-hour-time">
+                            <p style="font-size: 1.5rem; font-weight: 700; margin: 0;">⏰ Friday - Sunday</p>
+                            <p style="font-size: 2rem; font-weight: 700; color: #FFD700; margin: 10px 0 0 0;">2:00 PM - 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="happy-hour-deals">
+                        <div class="deal-item">
+                            <span class="deal-name">Krabby Patty</span>
+                            <span class="deal-discount">25% OFF</span>
+                        </div>
+                        <div class="deal-item">
+                            <span class="deal-name">Kelp Shake</span>
+                            <span class="deal-discount">30% OFF</span>
+                        </div>
+                        <div class="deal-item">
+                            <span class="deal-name">Coral Bits</span>
+                            <span class="deal-discount">20% OFF</span>
+                        </div>
+                        <div class="deal-item">
+                            <span class="deal-name">Kelp Fries</span>
+                            <span class="deal-discount">Buy One<br>Get One</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="sea-stars">
+        <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 8%; --random-top: 15%; --random-delay: 0s;">
+        <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 75%; --random-top: 25%; --random-delay: 0.3s;">
+        <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 12%; --random-top: 65%; --random-delay: 0.6s;">
+        <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 85%; --random-top: 55%; --random-delay: 0.9s;">
+        <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 25%; --random-top: 40%; --random-delay: 1.2s;">
+        <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 70%; --random-top: 70%; --random-delay: 1.5s;">
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="js/footer-loader.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
+
+    <script>
+        const hamburgerToggle = document.querySelector('.hamburger-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburgerToggle.addEventListener('click', () => {
+            hamburgerToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        var swiper = new Swiper('.blog-slider', {
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true,
+            mousewheel: {
+                invert: false,
+            },
+            pagination: {
+                el: '.blog-slider__pagination',
+                clickable: true,
+            }
+        });
+
+        const bubblesContainer = document.querySelector('.bubbles-container');
+        for (let i = 0; i < 10; i++) {
+            const bubble = document.createElement('div');
+            bubble.classList.add('bubble');
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.width = (Math.random() * 30 + 20) + 'px';
+            bubble.style.height = bubble.style.width;
+            bubble.style.animationDuration = (Math.random() * 5 + 5) + 's';
+            bubble.style.animationDelay = Math.random() * 2 + 's';
+            bubblesContainer.appendChild(bubble);
+        }
+    </script>
+</body>
+</html>

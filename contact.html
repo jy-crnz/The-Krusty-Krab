@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png">
+    <title>Contact The Krusty Krab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .sketchfab-container {
+            padding: 0;
+            width: 100%;
+            height: 600px;
+        }
+        .sketchfab-embed-wrapper {
+            width: 100%;
+            height: 100%;
+        }
+        .sketchfab-embed-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+        }
+        .sketchfab-embed-wrapper p {
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .sketchfab-container {
+                height: 400px;
+            }
+        }
+
+            .video-caption {
+            margin-top: 20px;
+            color: white;
+        }
+        .video-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .video-caption p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: bold;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="ocean-background">
+        <img src="images/ray.png" alt="Ray" class="ray-image">
+        <div class="bubbles-container"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+
+            <div class="logo-center">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png" alt="Krusty Krab Logo" class="logo-img">
+                <span class="logo-text">Krusty Krab</span>
+            </div>
+
+            <ul class="nav-right">
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+
+            <div class="hamburger-menu">
+                <button class="hamburger-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-category">
+                <h2 class="line-title">📧 Send Us A Message</h2>
+                <div class="contact-form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required placeholder="Tell us what's on your mind..." rows="6"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            Send Message
+                        </button>
+                    </form>
+                    <div id="formResponse" class="form-response"></div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="line-title">📍 General Information</h2>
+                <div class="contact-info-grid">
+                    
+                    <div class="contact-info-card">
+                        <div class="icon-wrapper">
+                            <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="45" r="20" stroke="white" stroke-width="4" fill="none"/>
+                                <circle cx="50" cy="45" r="8" fill="white"/>
+                                <path d="M50 65 L50 85 M40 75 L50 85 L60 75" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Location</h3>
+                        <p>
+                            <strong>9091 Gagalangin Tondo Manila</strong><br>
+                            Bikini Bottom, Pacific Ocean
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="icon-wrapper">
+                            <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="50" cy="50" r="35" stroke="white" stroke-width="4" fill="none"/>
+                                <path d="M50 30 L50 50 L65 65" stroke="white" stroke-width="4" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Business Hours</h3>
+                        <p>
+                            <strong>Monday - Friday:</strong> 9:00 AM - 6:00 PM<br>
+                            <strong>Saturday:</strong> 10:00 AM - 5:00 PM<br>
+                            <strong>Sunday:</strong> Closed<br>
+                            <em style="color: #ff202b; margin-top: 10px; display: block;">We're closed on Sundays!</em>
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="icon-wrapper">
+                            <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="20" y="30" width="60" height="50" rx="5" stroke="white" stroke-width="4" fill="none"/>
+                                <path d="M20 40 L50 60 L80 40" stroke="white" stroke-width="4" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>Get In Touch</h3>
+                        <p>
+                            <strong>Phone:</strong> (555) KRAB-CASH<br>
+                            <strong>Email:</strong> mrkrabs@krustykrab.bb<br>
+                            <strong>Business:</strong> owner@krustykrab.bb
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2 class="line-title">🦀 Location</h2>
+                <div class="sketchfab-container">
+                    <div class="sketchfab-embed-wrapper"> 
+                        <iframe title="The Krusty Krab" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/e109df8b1cb1487dbf2553e5e2d7eff1/embed?autostart=1&preload=1&transparent=1"> </iframe> 
+                        <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #ffffff; margin-top: 15px;"> 
+                            <a href="https://sketchfab.com/3d-models/the-krusty-krab-e109df8b1cb1487dbf2553e5e2d7eff1?utm_medium=embed&utm_campaign=share-popup&utm_content=e109df8b1cb1487dbf2553e5e2d7eff1" target="_blank" rel="nofollow" style="font-weight: bold; color: #ffffff;"> The Krusty Krab </a> by <a href="https://sketchfab.com/Mrlunettes?utm_medium=embed&utm_campaign=share-popup&utm_content=e109df8b1cb1487dbf2553e5e2d7eff1" target="_blank" rel="nofollow" style="font-weight: bold; color: #ffffff;"> Mrlunettes </a> on <a href="https://sketchfab.com?utm_medium=embed&utm_campaign=share-popup&utm_content=e109df8b1cb1487dbf2553e5e2d7eff1" target="_blank" rel="nofollow" style="font-weight: bold; color: #ffffff;">Sketchfab</a>
+                        </p>
+                    </div>
+                </div>
+                    <div class="video-caption">
+                        <center>
+                        <p>3D Look at the Krusty Krab's Main Branch Located at the Bikini Bottom</p>
+                        </center>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="sea-stars">
+            <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 8%; --random-top: 15%; --random-delay: 0s;">
+            <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 75%; --random-top: 25%; --random-delay: 0.3s;">
+            <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 12%; --random-top: 65%; --random-delay: 0.6s;">
+            <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 85%; --random-top: 55%; --random-delay: 0.9s;">
+            <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 25%; --random-top: 40%; --random-delay: 1.2s;">
+            <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 70%; --random-top: 70%; --random-delay: 1.5s;">
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="js/footer-loader.js"></script>
+    
+    <script>
+
+        const hamburgerToggle = document.querySelector('.hamburger-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburgerToggle.addEventListener('click', () => {
+            hamburgerToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

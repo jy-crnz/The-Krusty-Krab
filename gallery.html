@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery of The Krusty Krab</title>
+    <link rel="icon" type="image/png" href="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .video-container {
+            padding: 40px;
+            text-align: center;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; 
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+        }
+        .video-caption {
+            margin-top: 20px;
+            color: white;
+        }
+        .video-caption h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        .video-caption p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-style: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Ocean Background -->
+    <div class="ocean-background">
+        <img src="images/ray.png" alt="Ray" class="ray-image">
+        <div class="bubbles-container"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <ul class="nav-left">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+            </ul>
+
+            <div class="logo-center">
+                <img src="https://static.wikia.nocookie.net/logopedia/images/8/8a/KK_main_logo.png" alt="Krusty Krab Logo" class="logo-img">
+                <span class="logo-text">Krusty Krab</span>
+            </div>
+
+            <ul class="nav-right">
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="hamburger-menu">
+                <button class="hamburger-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="menu-section">
+        <div class="container">
+            <!-- Gallery Category -->
+            <div class="menu-category">
+                <h2 class="line-title">📸 Memorable Moments</h2>
+                <div class="carousel-container">
+                    <div class="owl-carousel custom-carousel owl-theme">
+                        <div class="item active" data-link="restaurant" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEM-vsJGYRxX0_EI2S6KDFKSuryQirn0LDcQ&s);">
+                            <div class="item-desc">
+                                <h3>The Krusty Krab</h3>
+                                <p>Our iconic restaurant shaped like a lobster trap!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="item" style="background-image: url(https://images.nintendolife.com/bc73d5513d4c3/1280x720.jpg);">
+                            <div class="item-desc">
+                                <h3>Our Cook!</h3>
+                                <p>Watch our master fry cook SpongeBob in action! With years of experience and boundless enthusiasm, he crafts every Krabby Patty with love.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="item" style="background-image: url(https://i.pinimg.com/736x/33/e9/31/33e9318abad9a87418c3eace3effae30.jpg);">
+                            <div class="item-desc">
+                                <h3>Dining Area</h3>
+                                <p>Enjoy your meal in our warm, nautical-themed dining area. With comfortable seating and ocean views, it's perfect for families.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="item" style="background-image: url(https://i.pinimg.com/736x/15/50/62/155062093e8eb3ab5f7ddef62c20ea72.jpg);">
+                            <div class="item-desc">
+                                <h3>Kitchen Scene</h3>
+                                <p>Behind every great meal is a great kitchen! Our spotless cooking space ensures perfection in every dish.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="item" style="background-image: url(https://preview.redd.it/pgi2n47eym531.jpg?width=640&crop=smart&auto=webp&s=afc67a25e5296eb81828c2d867044388d3ba9337);">
+                            <div class="item-desc">
+                                <h3>Mr. Krabs' Office</h3>
+                                <p>Where the magic happens! Mr. Krabs manages every detail from his office, ensuring quality service for all customers.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="item" style="background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cd1699c1-baaa-4632-8a2f-c609bcb3cb0e/dj6lt7m-c9f88d85-5453-41c1-b7eb-9a5529655540.jpg/v1/fill/w_1920,h_1080,q_75,strp/bikini_bottom_background___free_to_use__spongebob__by_spongebobothershows1_dj6lt7m-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiIvZi9jZDE2OTljMS1iYWFhLTQ2MzItOGEyZi1jNjA5YmNiM2NiMGUvZGo2bHQ3bS1jOWY4OGQ4NS01NDUzLTQxYzEtYjdlYi05YTU1Mjk2NTU1NDAuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.bUXrw_GlimK1xSpH3m4Mm6PE5YaxZ1sDSq_UuGeL_uI);">
+                            <div class="item-desc">
+                                <h3>Bikini Bottom</h3>
+                                <p>Located in the heart of Bikini Bottom! Our restaurant is surrounded by the vibrant underwater community we serve.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- YouTube Video Section -->
+            <div class="menu-category">
+                <h2 class="line-title">📺 Our First Ever Commercial</h2>
+                <div class="video-container">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/W77ZN_hVEE8?si=925JowvPWAZ6ne2F" 
+                            title="Krusty Krab Commercial" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-caption">
+                        <p>Live Reaction of our cook, SpongeBob to our commercial!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Sea Stars -->
+    <div class="sea-stars">
+            <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 8%; --random-top: 15%; --random-delay: 0s;">
+            <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 75%; --random-top: 25%; --random-delay: 0.3s;">
+            <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 12%; --random-top: 65%; --random-delay: 0.6s;">
+            <img src="images/yellow.png" alt="Yellow Star" class="sea-star" style="--random-left: 85%; --random-top: 55%; --random-delay: 0.9s;">
+            <img src="images/violet.png" alt="Violet Star" class="sea-star" style="--random-left: 25%; --random-top: 40%; --random-delay: 1.2s;">
+            <img src="images/orange.png" alt="Orange Star" class="sea-star" style="--random-left: 70%; --random-top: 70%; --random-delay: 1.5s;">
+    </div>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="js/footer-loader.js"></script>
+    
+    <script>
+        const hamburgerToggle = document.querySelector('.hamburger-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        hamburgerToggle.addEventListener('click', () => {
+            hamburgerToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        $(document).ready(function() {
+            $(".custom-carousel").owlCarousel({
+                autoWidth: true,
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: true,
+                navText: ['‹', '›'],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+
+            $(document).on('click', '.custom-carousel .item', function() {
+                const carousel = $(this).closest('.custom-carousel');
+                carousel.find('.item').not($(this)).removeClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+
+    </script>
+</body>
+</html>
